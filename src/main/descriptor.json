@@ -10,10 +10,96 @@
     "owner" : {
       "id" : "a.boni@crif.com",
       "name" : "Annamaria Boni"
-    }
+    },
+    "contactPoints" : [ ]
   },
   "interfaceComponents" : {
-    "inputPorts" : [ ],
-    "outputPorts" : [ ]
+    "inputPorts" : [ {
+      "fullyQualifiedName" : "urn:dpds:crifPlayground:dataproducts:annamariaboniSiteAnag:1:inputports:annamariaboniErp",
+      "name" : "annamariaboniErp",
+      "version" : "1.0.0",
+      "displayName" : "annamariaboni-erp",
+      "description" : "",
+      "promises" : {
+        "servicesType" : ""
+      },
+      "dependsOn" : "blindata:systems:annamariaboni-erp"
+    } ],
+    "outputPorts" : [ {
+      "fullyQualifiedName" : "urn:dpds:crifPlayground:dataproducts:annamariaboniSiteAnag:1:outputports:dwh",
+      "name" : "dwh",
+      "version" : "1.0.0",
+      "displayName" : "dwh",
+      "description" : "",
+      "promises" : {
+        "platform" : "PostgreSQL:annamariaboni-dwh",
+        "api" : {
+          "fullyQualifiedName" : "",
+          "name" : "annamariaboniSiteAnagdwhApi",
+          "version" : "1.0.0",
+          "specification" : "datastoreapi",
+          "specificationVersion" : "1.0.0",
+          "definition" : {
+            "schema" : {
+              "databaseSchemaName" : "cdm",
+              "tables" : [ {
+                "version" : "1.0.0",
+                "specification" : "json-schema",
+                "specificationVersion" : "1",
+                "definition" : {
+                  "name" : "dim_site",
+                  "displayName" : "dim_site",
+                  "description" : "",
+                  "physicalType" : "BASE_TABLE",
+                  "properties" : {
+                    "site_code" : {
+                      "name" : "site_code",
+                      "displayName" : "site_code",
+                      "physicalType" : "varchar",
+                      "description" : "",
+                      "ordinalPosition" : 1
+                    },
+                    "site_description" : {
+                      "name" : "site_description",
+                      "displayName" : "site_description",
+                      "physicalType" : "varchar",
+                      "description" : "",
+                      "ordinalPosition" : 2
+                    }
+                  },
+                  "s-context" : {
+                    "s-base" : "https://demo.blindata.io/logical/namespaces/name/annamariaboniRetail#",
+                    "s-type" : "[Site]",
+                    "site_code" : "[Site].siteCode",
+                    "site_description" : "[Site].siteDescription"
+                  }
+                }
+              } ]
+            }
+          }
+        }
+      }
+    } ]
+  },
+  "internalComponents" : {
+    "lifecycleInfo" : {
+      "prod" : [ {
+        "name" : "release",
+        "order" : 1,
+        "service" : {
+          "$href" : "dummy-executor"
+        },
+        "template" : {
+          "name" : "release",
+          "specification" : "",
+          "specificationVersion" : "",
+          "definition" : { },
+          "description" : ""
+        },
+        "configurations" : {
+          "params" : { }
+        }
+      } ]
+    }
   }
 }
