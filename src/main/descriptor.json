@@ -1,0 +1,19 @@
+{
+  "dataProductDescriptor" : "1.0.0",
+  "info" : {
+    "fullyQualifiedName" : "urn:dpds:crifPlayground:dataproducts:annamariaboniSiteAnag:1",
+    "domain" : "annamariaboniRetail",
+    "name" : "annamariaboniSiteAnag",
+    "displayName" : "annamariaboni Site Anag",
+    "description" : "Data Product that manages Site Master Data",
+    "version" : "1.0.0",
+    "owner" : {
+      "id" : "a.boni@crif.com",
+      "name" : "Annamaria Boni"
+    }
+  },
+  "interfaceComponents" : {
+    "inputPorts" : [ ],
+    "outputPorts" : [ ]
+  }
+}
